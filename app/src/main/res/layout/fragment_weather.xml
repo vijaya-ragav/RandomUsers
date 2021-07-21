@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/weather_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/weather_background_night"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/weather_image_view"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:src="@drawable/cloudy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/weather_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Moderate or heavy showers of ice pellets"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toStartOf="@+id/temperature_view"
+                app:layout_constraintStart_toStartOf="@+id/weather_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/weather_image_view" />
+
+            <TextView
+                android:id="@+id/location_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="New Delhi"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/weather_description"
+                app:layout_constraintTop_toBottomOf="@+id/weather_description" />
+
+            <TextView
+                android:id="@+id/temperature_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="28"
+                android:textColor="@color/white"
+                android:textSize="50sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/weather_image_view"
+                app:layout_constraintEnd_toStartOf="@+id/degree_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/degree_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="o"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/temperature_view" />
+
+            <TextView
+                android:id="@+id/feel_like"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="feel's like "
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/temperature_view"
+                app:layout_constraintTop_toBottomOf="@+id/temperature_view" />
+
+            <ImageView
+                android:id="@+id/humidity_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/humidity_text"
+                app:layout_constraintEnd_toStartOf="@+id/humidity_text"
+                app:layout_constraintTop_toTopOf="@+id/humidity_text"
+                app:srcCompat="@drawable/humidity"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/humidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 %"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/temperature_view"
+                app:layout_constraintTop_toBottomOf="@+id/feel_like" />
+
+            <ImageView
+                android:id="@+id/visibility_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="5dp"
+                app:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/visibility_text"
+                app:layout_constraintEnd_toStartOf="@+id/visibility_text"
+                app:layout_constraintTop_toTopOf="@+id/visibility_text"
+                app:srcCompat="@drawable/visibility" />
+
+            <TextView
+                android:id="@+id/visibility_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 km"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/humidity_icon"
+                app:layout_constraintEnd_toStartOf="@+id/humidity_icon"
+                app:layout_constraintTop_toTopOf="@+id/humidity_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
